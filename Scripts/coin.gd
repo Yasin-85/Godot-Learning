@@ -1,4 +1,5 @@
 extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
-	print("this shit is touching me.")
+	print("+1 Coin!")
+	queue_free()
