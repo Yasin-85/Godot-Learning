@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://1rpvta7t1crj" path="res://Scenes/kill_zone.tscn" id="5_7jktm"]
 [ext_resource type="PackedScene" uid="uid://vcuu2u3q3as8" path="res://Scenes/platform_ice.tscn" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://dqqi5xa5pwd2u" path="res://Scenes/platform_desert.tscn" id="7_eow3j"]
+[ext_resource type="PackedScene" uid="uid://cqpg085raenka" path="res://Scenes/slime_green.tscn" id="8_j5wjh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_feb5d"]
 texture = ExtResource("2_e2o6t")
@@ -320,3 +321,23 @@ position = Vector2(-353, -121)
 
 [node name="Platform_desert5" parent="Platforms" unique_id=1702832492 instance=ExtResource("7_eow3j")]
 position = Vector2(-400, -155)
+
+[node name="Enemies" type="Node" parent="." unique_id=1581367354]
+
+[node name="Slime_green" parent="Enemies" unique_id=1949096610 instance=ExtResource("8_j5wjh")]
+position = Vector2(-184, 16)
+
+[node name="Slime_green2" parent="Enemies" unique_id=1681239987 instance=ExtResource("8_j5wjh")]
+position = Vector2(-504, -176)
+
+[node name="Slime_green3" parent="Enemies" unique_id=1026238430 instance=ExtResource("8_j5wjh")]
+position = Vector2(-616, -144)
+
+[node name="Slime_green4" parent="Enemies" unique_id=1880695532 instance=ExtResource("8_j5wjh")]
+position = Vector2(120, 32)
+
+[node name="Slime_green5" parent="Enemies" unique_id=1455040284 instance=ExtResource("8_j5wjh")]
+position = Vector2(584, 32)
+
+[node name="Slime_green6" parent="Enemies" unique_id=992272519 instance=ExtResource("8_j5wjh")]
+position = Vector2(888, 16)
