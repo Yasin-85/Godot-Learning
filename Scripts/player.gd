@@ -2,8 +2,10 @@ extends CharacterBody2D
 
 const SPEED = 125.0
 const JUMP_VELOCITY = -300.0
+var is_dead = false
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var running_sound: AudioStreamPlayer2D = $running_sound
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -25,13 +27,22 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = true
 	
 	# Play animations
-	if is_on_floor() :
-		if direction == 0 : 
-			animated_sprite.play("Idle")
+	if !is_dead :
+		if is_on_floor() :
+			if direction == 0 : 
+				animated_sprite.play("Idle")
+			else :
+				if Engine.get_frames_drawn() % 15 == 0 : 
+					running_sound.play()
+				animated_sprite.play("run")
 		else :
-			animated_sprite.play("run")
+			animated_sprite.play("jump")
+			
+			if running_sound.playing:
+				running_sound.stop()
 	else :
-		animated_sprite.play("jump")
+		animated_sprite.play("death")
+	
 	
 	# Apply movement
 	if direction:
